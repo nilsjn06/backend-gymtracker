@@ -1,4 +1,4 @@
-package htw_berlin.webtech;
+package htw_berlin.webtech.rest.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
