@@ -1,6 +1,5 @@
-package htw_berlin.webtech.rest.corntroller;
+package htw_berlin.webtech;
 
-import htw_berlin.webtech.rest.model.Exercise;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
