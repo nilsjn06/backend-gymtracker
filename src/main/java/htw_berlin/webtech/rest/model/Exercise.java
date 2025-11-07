@@ -11,6 +11,7 @@ public class Exercise {
 
     private String name;
     private String muskelgruppe;
+    private int satz;
     private int wiederholungen;
     private double gewicht;
 

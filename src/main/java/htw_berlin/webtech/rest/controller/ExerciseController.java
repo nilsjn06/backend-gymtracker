@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
         @GetMapping(path = "/exercise")
         public ResponseEntity<Exercise> getExercise() {
-            final Exercise exercise = new Exercise("Bankdrücken", "Brust", 10, 80.0);
+            final Exercise exercise = new Exercise("Bankdrücken", "Brust", 2,10, 80.0);
             return ResponseEntity.ok(exercise);
         }
     }
