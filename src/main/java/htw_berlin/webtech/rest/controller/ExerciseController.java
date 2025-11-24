@@ -1,19 +1,21 @@
 package htw_berlin.webtech.rest.controller;
 
 import htw_berlin.webtech.rest.model.Exercise;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import htw_berlin.webtech.rest.service.ExerciseService;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+@CrossOrigin(origins = "https://frontend-gymtrakcer.onrender.com")
+@RestController
+public class ExerciseController {
 
+    private final ExerciseService service;
 
-    @Controller
-    public class ExerciseController {
-
-        @GetMapping(path = "/exercise")
-        public ResponseEntity<Exercise> getExercise() {
-            final Exercise exercise = new Exercise("Bankdrücken", "Brust", 2,10, 80.0);
-            return ResponseEntity.ok(exercise);
-        }
+    public ExerciseController(ExerciseService service) {
+        this.service = service;
     }
 
-
+    @GetMapping("/exercises")
+    public List<Exercise> getAllExercises() {
+        return service.getAll();
+    }
+}
