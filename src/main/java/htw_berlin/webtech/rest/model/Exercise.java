@@ -10,11 +10,9 @@ import lombok.Setter;
 public class Exercise {
 
     private String name;
-    private String muskelgruppe;
+    private Muskelgruppe muskelgruppe;
     private int satz;
     private int wiederholungen;
     private double gewicht;
 
-
-    public Exercise() {}
 }

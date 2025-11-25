@@ -1,0 +1,18 @@
+package htw_berlin.webtech.rest.controller;
+
+import htw_berlin.webtech.rest.model.Exercise;
+import htw_berlin.webtech.rest.model.Muskelgruppe;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class ExcerciserController {
+
+    @GetMapping(path = "/exercise")
+    public ResponseEntity<Exercise> getExercise() {
+        final Exercise exercise = new Exercise("Bankdrücken", Muskelgruppe.BRUST, 4, 10,80.0);
+        return ResponseEntity.ok(exercise);
+    }
+
+}
