@@ -3,22 +3,23 @@ package htw_berlin.webtech.rest.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Entity
-@Table(name = "exercises")
+@Table(name = "workouts")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Exercise {
+public class Workout {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private LocalDate date; // z.B. 2025-12-10
 
-    @Enumerated(EnumType.STRING)
-    private Muskelgruppe muskelgruppe;
+    private String title; // z.B. "Push" / "Pull" / "Brust" (optional)
 }
 

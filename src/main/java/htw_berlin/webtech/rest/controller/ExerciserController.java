@@ -1,5 +1,6 @@
 package htw_berlin.webtech.rest.controller;
 
+/*
 import htw_berlin.webtech.rest.model.Exercise;
 import htw_berlin.webtech.rest.model.Muskelgruppe;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,3 +33,4 @@ public class ExerciserController {
         );
     }
 }
+*/
