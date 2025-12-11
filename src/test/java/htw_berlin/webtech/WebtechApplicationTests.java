@@ -2,12 +2,10 @@ package htw_berlin.webtech;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+@Disabled("Deaktiviert, weil wir keinen Test brauchen")
 class WebtechApplicationTests {
 
-	@Disabled
 	@Test
 	void contextLoads() {
 	}
