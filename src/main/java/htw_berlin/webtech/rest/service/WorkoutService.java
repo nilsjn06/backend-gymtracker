@@ -28,30 +28,6 @@ public class WorkoutService {
         this.workoutSetRepository = workoutSetRepository;
     }
 
-    // ---------- Übungen ----------
-    public List<ExerciseDto> getAllExercises() {
-        return exerciseRepository.findAll().stream()
-                .map(this::toExerciseDto)
-                .collect(Collectors.toList());
-    }
-
-    public ExerciseDto createExercise(ExerciseCreateDto dto) {
-        Exercise exercise = Exercise.builder()
-                .name(dto.getName())
-                .muskelgruppe(dto.getMuskelgruppe())
-                .build();
-        exercise = exerciseRepository.save(exercise);
-        return toExerciseDto(exercise);
-    }
-
-    private ExerciseDto toExerciseDto(Exercise exercise) {
-        return ExerciseDto.builder()
-                .id(exercise.getId())
-                .name(exercise.getName())
-                .muskelgruppe(exercise.getMuskelgruppe())
-                .build();
-    }
-
     // ---------- Workouts ----------
     public WorkoutViewDto createWorkout(CreateWorkoutDto dto) {
         Workout workout = Workout.builder()
@@ -142,4 +118,3 @@ public class WorkoutService {
                 .build();
     }
 }
-
