@@ -80,6 +80,22 @@ public class WorkoutService {
         return toWorkoutViewDto(workout, sets);
     }
 
+    // ---------- DELETE ----------
+    public void deleteAllWorkouts() {
+        workoutSetRepository.deleteAll();
+        workoutRepository.deleteAll();
+    }
+
+    public void deleteWorkout(Long workoutId) {
+        Workout workout = workoutRepository.findById(workoutId)
+                .orElseThrow(() -> new IllegalArgumentException("Workout not found"));
+
+        List<WorkoutSet> sets = workoutSetRepository.findByWorkout(workout);
+        workoutSetRepository.deleteAll(sets);
+
+        workoutRepository.delete(workout);
+    }
+
     // ---------- Mapping in deine gewünschte Struktur ----------
     private WorkoutViewDto toWorkoutViewDto(Workout workout, List<WorkoutSet> sets) {
 
