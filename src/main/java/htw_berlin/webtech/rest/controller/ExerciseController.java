@@ -5,6 +5,7 @@ import htw_berlin.webtech.rest.dto.ExerciseDto;
 import htw_berlin.webtech.rest.service.ExerciseService;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -29,12 +30,12 @@ public class ExerciseController {
     }
 
     @PostMapping
-    public ExerciseDto create(@RequestBody ExerciseCreateDto dto) {
+    public ExerciseDto create(@Valid @RequestBody ExerciseCreateDto dto) {
         return exerciseService.createExercise(dto);
     }
 
     @PutMapping("/{id}")
-    public ExerciseDto update(@PathVariable Long id, @RequestBody ExerciseCreateDto dto) {
+    public ExerciseDto update(@PathVariable Long id, @Valid @RequestBody ExerciseCreateDto dto) {
         return exerciseService.updateExercise(id, dto);
     }
 
@@ -43,4 +44,3 @@ public class ExerciseController {
         exerciseService.deleteExercise(id);
     }
 }
-
