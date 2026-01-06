@@ -7,6 +7,7 @@ import htw_berlin.webtech.rest.model.WorkoutSet;
 import htw_berlin.webtech.rest.repository.ExerciseRepository;
 import htw_berlin.webtech.rest.repository.WorkoutRepository;
 import htw_berlin.webtech.rest.repository.WorkoutSetRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -94,6 +95,21 @@ public class WorkoutService {
         workoutSetRepository.deleteAll(sets);
 
         workoutRepository.delete(workout);
+    }
+
+    // Entferne alle Sätze einer Übung aus einem Workout (löscht nicht die Übung selbst)
+    @Transactional
+    public WorkoutViewDto removeExerciseFromWorkout(Long workoutId, Long exerciseId) {
+        Workout workout = workoutRepository.findById(workoutId)
+                .orElseThrow(() -> new IllegalArgumentException("Workout not found"));
+
+        Exercise exercise = exerciseRepository.findById(exerciseId)
+                .orElseThrow(() -> new IllegalArgumentException("Exercise not found"));
+
+        workoutSetRepository.deleteByWorkoutAndExercise(workout, exercise);
+
+        List<WorkoutSet> sets = workoutSetRepository.findByWorkout(workout);
+        return toWorkoutViewDto(workout, sets);
     }
 
     // ---------- Mapping in deine gewünschte Struktur ----------

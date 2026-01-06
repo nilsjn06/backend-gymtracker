@@ -54,4 +54,10 @@ public class WorkoutController {
     public void deleteWorkout(@PathVariable Long id) {
         workoutService.deleteWorkout(id);
     }
+
+    // Entferne alle Sätze einer Übung aus dem Workout (ohne die Übung selbst zu löschen)
+    @DeleteMapping("/{id}/exercises/{exerciseId}")
+    public WorkoutViewDto removeExerciseFromWorkout(@PathVariable Long id, @PathVariable Long exerciseId) {
+        return workoutService.removeExerciseFromWorkout(id, exerciseId);
+    }
 }
