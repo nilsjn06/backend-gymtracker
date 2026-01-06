@@ -6,6 +6,7 @@ import htw_berlin.webtech.rest.dto.AddSetDto;
 import htw_berlin.webtech.rest.service.WorkoutService;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -21,7 +22,7 @@ public class WorkoutController {
 
     // "Workout beginnen"
     @PostMapping
-    public WorkoutViewDto createWorkout(@RequestBody CreateWorkoutDto dto) {
+    public WorkoutViewDto createWorkout(@Valid @RequestBody CreateWorkoutDto dto) {
         return workoutService.createWorkout(dto);
     }
 
