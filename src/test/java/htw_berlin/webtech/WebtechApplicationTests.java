@@ -139,7 +139,7 @@ class ApiMixedTests {
 		assertNotNull(dto.getId());
 		assertEquals("2026-01-08", dto.getDate());
 		assertEquals(title, dto.getTitle());
-		// exercises ist beim Create bei dir leer -> darf null oder leer sein, beides ok:
+		// exercises ist beim Create bei dir leer - darf null oder leer sein, beides ok:
 		// (Falls du sicher "leer" willst, sag Bescheid, dann machen wir es streng.)
 	}
 
