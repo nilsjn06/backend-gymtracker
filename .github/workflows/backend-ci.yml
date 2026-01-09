@@ -24,3 +24,7 @@ jobs:
 
       - name: Run Tests
         run: ./gradlew test
+      - name: Trigger Render Deploy
+        if: success()
+        run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
+
