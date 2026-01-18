@@ -1,5 +1,6 @@
 # backend-gymtracker
 Team Mitglieder: Dario Scholze, Nils Neunaß.
+
 Unsere App dient dazu, das Training im Fitnessstudio zu tracken. Über den Reiter „Übungen“ kann sich der Nutzer eine Liste aller vorhandenen Übungen anzeigen lassen. In dieser Liste können Übungen gelöscht, bearbeitet oder neue Übungen hinzugefügt werden, zum Beispiel wenn man im Fitnessstudio eine neue Übung ausführt. Zusätzlich besteht die Möglichkeit, die Übungen nach Kategorien zu sortieren, um eine übersichtlichere Darstellung zu erhalten.
 
 Über den Reiter „Workout starten“ kann ein neues Workout angelegt werden. Dafür wählt man zunächst ein Datum aus, vergibt einen Titel und startet das Workout per Klick auf „Workout starten“. Innerhalb dieses Workouts kann man über den Button „Übungen hinzufügen“ eine Übung aus der bestehenden Übungsliste auswählen. Auch hier lassen sich die Übungen nach Kategorien filtern oder es können neue Übungen hinzugefügt werden, falls diese noch nicht in der Liste vorhanden sind.
